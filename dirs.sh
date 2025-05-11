@@ -9,8 +9,9 @@ if [ -z "$folder" ]; then
 fi
 
 if [ -d "$folder" ]; then
-    echo "Error: The $folder already exists"
-    exit 2
+    ls -la "$folder"
+elif [ -f "$folder" ]; then
+    echo "The $folder is not a directory"
 else
-    ls -la "$folder"    
+    echo "Error: The $folder does not found"
 fi
